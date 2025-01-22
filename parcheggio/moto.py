@@ -1,16 +1,16 @@
 #Diego Marrone
-#auto
+#moto
 
 import veicolo
 
-class Auto:
+class Moto:
     
     def __init__(self , targa: list):
         super().__init__(targa)
         self.__maxPasseggeri = maxPasseggeri
         self.__passeggeri = ""
         
-        if maxPasseggeri < 1 or maxPasseggeri > 5:
+        if maxPasseggeri < 1 or maxPasseggeri > 2:
             raise ValueError("Non è possibile avere questo numero di passeggeri")
     @property
     def maxPasseggeri(self):
@@ -29,27 +29,19 @@ class Auto:
         return
     
     def __str__(self):
-        return "auto: " + str(self.__dict__)
+        return "moto: " + str(self.__dict__)
     
     def __repr__(self):
-        return "auto: " + str(self.__dict__)
+        return "moto: " + str(self.__dict__)
     
 if __name__=="__main__":
     v = veicolo.Veicolo("AB 123 CD")
     v.marca = "Lamborghini"
-    v.modello = "modello sconosciuto"
+    v.modello = "moto"
     v.colore = "bianco"
     v.cilindrata = 2000
     v.alimentazione = "benzina"
     print(v)
-    v.maxPasseggeri = 5
-    v.passeggeri = 3
+    v.maxPasseggeri = 2
+    v.passeggeri = 1
     print(v)
-  
-    
-    
-    
-    
-    
-        
-        

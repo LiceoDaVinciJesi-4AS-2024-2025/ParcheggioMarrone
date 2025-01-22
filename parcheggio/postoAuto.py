@@ -60,17 +60,16 @@ class PostoAuto:
     
 
 if __name__ == "__main__":
-    macchina = auto.Auto("AB 123 CD")
-    macchina.marca = "Lamborghini"
-    macchina.modello = "modello sconosciuto"
-    macchina.colore = "bianco"
-    macchina.cilindrata = 2000
-    macchina.alimentazione = "benzina"
+    v = auto.Auto("AB 123 CD")
+    v.marca = "Lamborghini"
+    v.modello = "modello sconosciuto"
+    v.colore = "bianco"
+    v.cilindrata = 2000
+    v.alimentazione = "benzina"
     print(v)
     macchina.maxPasseggeri = 5
     macchina.passeggeri = 1
     print(macchina)
-    print()
     parcheggio1 = PostoAuto("0")
     print(parcheggio1)
     print()
