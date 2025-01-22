@@ -3,14 +3,14 @@
 
 class Veicolo:
     
-    def __init__(self , targa: list):
+    def __init__(self , targa: str):
         
         alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
         numeri = "0123456789"
         self.__marca = ""
         self.__modello = ""
         self.__colore = ""
-        self.__cilindrata = ""
+        self.__cilindrata = 0
         self.__alimentazione = ""
         self.__targa = targa
         
@@ -28,7 +28,7 @@ class Veicolo:
         
     @property
     def marca(self):
-            return self.__marca  
+        return self.__marca  
     @marca.setter
     def marca(self , value:str):
         marche = ["lamborghini" , "ferrari" , "tesla" , "fiat"]    
@@ -60,8 +60,9 @@ class Veicolo:
     @property
     def cilindrata(self):
         return self.__cilindrata
+    
     @cilindrata.setter
-    def cilindrata(self , value:str):
+    def cilindrata(self , value:int):
         if value % 100 != 0:
             raise ValueError("La cilindrata deve essere maggiore di 0 e un multiplo di 100")
         self.__cilindrata = value

@@ -3,20 +3,18 @@
 
 import veicolo
 
-class Auto:
+class Auto(veicolo.Veicolo):
     
-    def __init__(self , targa: list):
+    def __init__(self , targa: str):
         super().__init__(targa)
-        self.__maxPasseggeri = maxPasseggeri
-        self.__passeggeri = ""
+        self.__maxPasseggeri = 5
+        self.__passeggeri = 0
         
-        if maxPasseggeri < 1 or maxPasseggeri > 5:
-            raise ValueError("Non è possibile avere questo numero di passeggeri")
     @property
     def maxPasseggeri(self):
         return self.__maxPasseggeri
     @maxPasseggeri.setter
-    def maxPasseggeri(self , value:str):
+    def maxPasseggeri(self , value:int):
         self.__maxPasseggeri = value
         return
     
@@ -24,7 +22,7 @@ class Auto:
     def passeggeri(self):
         return self.__passeggeri
     @passeggeri.setter
-    def passeggeri(self , value:str):
+    def passeggeri(self , value:int):
         self.__passeggeri = value
         return
     
@@ -42,7 +40,6 @@ if __name__=="__main__":
     v.cilindrata = 2000
     v.alimentazione = "benzina"
     print(v)
-    v.maxPasseggeri = 5
     v.passeggeri = 3
     print(v)
   

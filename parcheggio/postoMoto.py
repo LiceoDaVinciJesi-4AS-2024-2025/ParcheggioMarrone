@@ -1,16 +1,16 @@
 #Diego Marrone
-#postoAuto
+#postoMoto
 
-import auto
+import moto
 import datetime
 
-class PostoAuto(auto.Auto):
+class Postomoto(moto.Moto):
     
     def __init__(self, numeroPosto:str):
         self.__numeroPosto = numeroPosto
-        self.__tipoParcheggio = "Auto"
+        self.__tipoParcheggio = "Moto"
         self.__parcheggioOccupato = False
-        self.__targaAutoParcheggiata= ""
+        self.__targaMotoParcheggiata= ""
         self.__dataFineOccupazione = ""
         
     @property
@@ -26,21 +26,21 @@ class PostoAuto(auto.Auto):
         return self.__parcheggioOccupato
     
     @property
-    def autoParcheggiata(self):
-        return self.__targaAutoParcheggiata
+    def motoParcheggiata(self):
+        return self.__targaMotoParcheggiata
     
     @property
     def dataFineOccupazione(self):
         return self.__dataFineOccupazione
 
-    def occupaPosto(self, veicolo: auto.Auto , dataFineOccupazione:datetime.date):
+    def occupaPosto(self, veicolo: moto.Moto , dataFineOccupazione:datetime.date):
         if self.__parcheggioOccupato == True:
-            raise ValueError("Il posto" , self.__numeroPosto , "è già occupato dalla macchina" , self.__targaAutoParcheggiata)          
+            raise ValueError("Il posto" , self.__numeroPosto , "è già occupato dalla macchina" , self.__targaMotoParcheggiata)          
         adesso = datetime.datetime.now()
         if dataFineOccupazione < adesso:
             raise ValueError("Non puoi inserire una data vecchia")
         self.__parcheggioOccupato = True
-        self.__targaAutoParcheggiata = veicolo
+        self.__targaMotoParcheggiata = veicolo
         self.__dataFineOccupazione = dataFineOccupazione
         return True
     
@@ -48,7 +48,7 @@ class PostoAuto(auto.Auto):
         if self.__parcheggioOccupato == False:
             raise ValueError("Il posto" , self.__numeroPosto , "è già libero")
         self.__parcheggioOccupato = False
-        self.__targaAutoParcheggiata = ""
+        self.__targaMotoParcheggiata = ""
         self.__dataFineOccupazione = ""
         return True
     
@@ -60,18 +60,16 @@ class PostoAuto(auto.Auto):
     
 
 if __name__ == "__main__":
-    v = auto.Auto("AB 123 CD")
+    v = moto.Moto("AB 123 CD")
     v.marca = "Lamborghini"
-    v.modello = "modello sconosciuto"
+    v.modello = "moto"
     v.colore = "bianco"
     v.cilindrata = 2000
     v.alimentazione = "benzina"
-    v.maxPasseggeri = 5
+    v.maxPasseggeri = 2
     v.passeggeri = 1
     print(v)
-    parcheggio = PostoAuto("14")
+    parcheggio = Postomoto("14")
     print(parcheggio)
     parcheggio.occupaPosto(v, datetime.datetime(2025, 2, 23, 15, 30, 0))
     print(parcheggio)
-
-    
