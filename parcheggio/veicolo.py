@@ -91,7 +91,7 @@ class Veicolo:
     
 if __name__=="__main__":
     
-    v = Veicolo("FA 849 DZ")
+    v = Veicolo("AB 123 CD")
     v.marca = "Lamborghini"
     v.modello = "modello sconosciuto"
     v.colore = "bianco"

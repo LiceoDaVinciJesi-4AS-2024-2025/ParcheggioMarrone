@@ -33,23 +33,23 @@ class PostoAuto:
     def dataTermine(self):
         return self.__dataFineOccupazione
 
-    def occupaPosto(self, veicolo:auto.Auto, dataTermine:datetime.date):
+    def occupaPosto(self, dataTermine:datetime.date):
         if self.__occupato == True:
             raise ValueError("Il posto" , self.__numeroPosto , "è già occupato dalla macchina" , self.__autoParcheggiata)          
         adesso = datetime.datetime.now()
         if dataTermine < adesso:
             raise ValueError("Non puoi inserire una data vecchia")
         self.__occupato = True
-        self.__autoParcheggiata = veicolo
-        self.__dataTermine = dataTermine
+        self.__targaAutoParcheggiata = veicolo
+        self.__dataFineOccupazione = dataFineOccupazione
         return True
     
     def liberaPosto(self):
         if self.__occupato == False:
             raise ValueError("Il posto" , self.__numeroPosto , "è già libero")
         self.__occupato = False
-        self.__autoParcheggiata = ""
-        self.__dataTermine = ""
+        self.__targaAutoParcheggiata = ""
+        self.__dataFineOccupazione = ""
         return True
     
     def __str__(self):
@@ -60,14 +60,16 @@ class PostoAuto:
     
 
 if __name__ == "__main__":
-    macchina1 = auto.Auto("AB 123 CD")
-    macchina1.marca = "Fiat"
-    macchina1.modello = "Panda"
-    macchina1.alimentazione = "benzina"
-    macchina1.colore = "nero"
-    macchina1.maxPasseggeri = 5
-    macchina1.passeggeri = 1
-    print(macchina1)
+    macchina = auto.Auto("AB 123 CD")
+    macchina.marca = "Lamborghini"
+    macchina.modello = "modello sconosciuto"
+    macchina.colore = "bianco"
+    macchina.cilindrata = 2000
+    macchina.alimentazione = "benzina"
+    print(v)
+    macchina.maxPasseggeri = 5
+    macchina.passeggeri = 1
+    print(macchina)
     print()
     parcheggio1 = PostoAuto("0")
     print(parcheggio1)
