@@ -4,7 +4,7 @@
 import auto
 import datetime
 
-class PostoAuto(auto.Auto):
+class Postoauto(auto.Auto):
     
     def __init__(self, numeroPosto:str):
         self.__numeroPosto = numeroPosto
@@ -73,9 +73,9 @@ if __name__ == "__main__":
     v.maxPasseggeri = 5
     v.passeggeri = 1
     print(v)
-    parcheggio = PostoAuto("14")
-    print(parcheggio)
-    parcheggio.occupaPosto(v, datetime.datetime(2025, 2, 23, 15, 30, 0))
-    print(parcheggio)
+    parcheggioauto = Postoauto("14")
+    print(parcheggioauto)
+    parcheggioauto.occupaPosto(v, datetime.datetime(2025, 2, 23, 15, 30, 0))
+    print(parcheggioauto)
 
     

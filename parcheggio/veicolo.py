@@ -4,6 +4,7 @@
 class Veicolo:
     def __init__(self , targa: str):
         
+        #elenco numeri e alfabeto
         alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
         numeri = "0123456789"
         self.__marca = ""

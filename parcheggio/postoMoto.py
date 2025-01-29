@@ -73,7 +73,7 @@ if __name__ == "__main__":
     v.maxPasseggeri = 2
     v.passeggeri = 1
     print(v)
-    parcheggio = Postomoto("14")
-    print(parcheggio)
-    parcheggio.occupaPosto(v, datetime.datetime(2025, 2, 23, 15, 30, 0))
-    print(parcheggio)
+    parcheggiomoto = Postomoto("14")
+    print(parcheggiomoto)
+    parcheggiomoto.occupaPosto(v, datetime.datetime(2025, 2, 23, 15, 30, 0))
+    print(parcheggiomoto)
