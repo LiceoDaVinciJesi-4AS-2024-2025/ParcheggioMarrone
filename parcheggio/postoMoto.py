@@ -13,6 +13,7 @@ class Postomoto(moto.Moto):
         self.__targaMotoParcheggiata= ""
         self.__dataFineOccupazione = ""
         
+    #definisco tutte le caratteristiche per un parcheggio di una moto
     @property
     def numeroPosto(self):
         return self.__numeroPosto
@@ -34,9 +35,11 @@ class Postomoto(moto.Moto):
         return self.__dataFineOccupazione
 
     def occupaPosto(self, veicolo: moto.Moto , dataFineOccupazione:datetime.date):
+        #se il parcheggio è occupato ritorna errore
         if self.__parcheggioOccupato == True:
             raise ValueError("Il posto" , self.__numeroPosto , "è già occupato dalla macchina" , self.__targaMotoParcheggiata)          
         adesso = datetime.datetime.now()
+        #se la data è vecchia ritorna errore
         if dataFineOccupazione < adesso:
             raise ValueError("Non puoi inserire una data vecchia")
         self.__parcheggioOccupato = True
@@ -45,6 +48,7 @@ class Postomoto(moto.Moto):
         return True
     
     def liberaPosto(self):
+        #se il parcheggio non è occupato parcheggia la moto
         if self.__parcheggioOccupato == False:
             raise ValueError("Il posto" , self.__numeroPosto , "è già libero")
         self.__parcheggioOccupato = False

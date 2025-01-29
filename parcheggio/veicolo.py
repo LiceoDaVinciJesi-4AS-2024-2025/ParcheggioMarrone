@@ -2,7 +2,6 @@
 #Livello 0
 
 class Veicolo:
-    
     def __init__(self , targa: str):
         
         alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -14,6 +13,7 @@ class Veicolo:
         self.__alimentazione = ""
         self.__targa = targa
         
+        #verifico che la targa sia corretta
         if targa[0] not in alfabeto and targa[1] not in alfabeto and targa[7] not in alfabeto and targa[8] not in alfabeto:
             raise ValueError("La targa è sbagliata")
         
@@ -25,7 +25,8 @@ class Veicolo:
         
         if len(targa) != 9:
             raise ValueError("La targa è sbagliata")
-        
+    
+    #definisco la marca
     @property
     def marca(self):
         return self.__marca  
@@ -37,6 +38,7 @@ class Veicolo:
         self.__marca = value
         return
     
+    #definisco il modello
     @property
     def modello(self):
         return self.__modello   
@@ -45,6 +47,7 @@ class Veicolo:
         self.__modello = value
         return
     
+    #definisco il colore
     @property
     def colore(self):
         return self.__colore
@@ -57,10 +60,10 @@ class Veicolo:
         self.__colore = value
         return
     
+    #definisco la cilindrata
     @property
     def cilindrata(self):
         return self.__cilindrata
-    
     @cilindrata.setter
     def cilindrata(self , value:int):
         if value % 100 != 0:
@@ -68,6 +71,7 @@ class Veicolo:
         self.__cilindrata = value
         return 
     
+    #definisco l'alimentazione
     @property
     def alimentazione(self):
         return self.__alimentazione
@@ -78,7 +82,8 @@ class Veicolo:
             raise ValueError("Non è possibile avere questo carburante")
         self.__alimentazione = value
         return
-            
+    
+    #definisco la targa
     @property
     def targa(self):
         return self.__targa

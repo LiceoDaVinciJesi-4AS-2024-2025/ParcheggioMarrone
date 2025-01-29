@@ -4,12 +4,12 @@
 import veicolo
 
 class Auto(veicolo.Veicolo):
-    
     def __init__(self , targa: str):
         super().__init__(targa)
         self.__maxPasseggeri = 5
         self.__passeggeri = 0
-        
+   
+   #definisco il numero massimo di passeggeri
     @property
     def maxPasseggeri(self):
         return self.__maxPasseggeri
@@ -18,6 +18,7 @@ class Auto(veicolo.Veicolo):
         self.__maxPasseggeri = value
         return
     
+    #definisco i passeggeri
     @property
     def passeggeri(self):
         return self.__passeggeri
