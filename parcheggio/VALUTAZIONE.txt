@@ -1,0 +1,5 @@
+Commit così così
+Classi basi ok
+La classe Parcheggio non ha senso
+
+6.5
