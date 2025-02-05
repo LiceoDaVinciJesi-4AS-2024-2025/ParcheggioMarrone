@@ -56,15 +56,15 @@ class Parcheggio(postoAuto.Postoauto , postoMoto.Postomoto):
             self.__targaVeicolo = veicolo
         return True
      
-    def contoGuadagno(self):
-        if self.__postiLiberiAuto > 0 or self.__postiLiberiMoto > 0:
-         
-        return 
-    
-    
-        
-if __name__=="__main__":
-    
+#   def contoGuadagno(self):
+#   	if self.__postiLiberiAuto > 0 or self.__postiLiberiMoto > 0:
+#          
+#   	return 
+#     
+#     
+#         
+#if __name__=="__main__":
+#     
         
         
         
